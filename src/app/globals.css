@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+[data-component-wrapper]{
+  width: 100%;
+}
+.categoryIcon:hover path{
+  fill: #fff;
+}
+.svg-object:hover { outline: none; /* outer hover only */ }
+@theme inline {
+  --color-background: var(--vg-as-imgbackground);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-cormorant-garamond);
+  --font-helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-helvetica);
+}
+@layer base {
+  .heading-1 {
+    @apply text-[72px] text-[#ffffff] leading-tight
+  }
+  .heading-2 {
+    @apply text-[54px] text-[#ffffff] leading-normal
+  }
+  .heading-3 {
+    @apply text-[48px] leading-[58px] text-[#ffffff]
+  }
+  .heading-4 {
+    @apply text-[40px] leading-[48px] text-[#ffffff]
+  }
+  .heading-5 {
+    @apply text-[12px] leading-[18px] text-[#000000] font-black
+  }
+  .desc {
+    @apply text-[16px] text-[#ffffff]
+  }
+  .bannerDesc {
+    @apply text-[18px] text-[#ffffff]
+  }
+  .badgeText {
+    @apply text-[24px] text-[#ffffff]
+  }
+  .categoryText {
+    @apply text-[24px] leading-8
+  }
+}
+
+@layer utilities {
+  .font-cormorant {
+    font-family: var(--font-cormorant-garamond), serif;
+  }
+  
+  .font-helvetica {
+    font-family: var(--font-helvetica);
+  }
+  
+  .font-geist {
+    font-family: var(--font-geist-sans), sans-serif;
+  }
+}
